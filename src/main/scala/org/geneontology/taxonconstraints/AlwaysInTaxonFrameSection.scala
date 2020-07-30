@@ -32,8 +32,6 @@ class AlwaysInTaxonFrameSection(editorKit: OWLEditorKit, frame: OWLFrame[OWLClas
 
   override def refill(ontology: OWLOntology): Unit = {
     val term = getRootObject
-    println(s"Refill always for $term")
-    println(s"Asserted always: ${assertedAlwaysInTaxa(term, Set(ontology))}")
     val rows = assertedAlwaysInTaxa(term, Set(ontology)).map(filler => new AlwaysInTaxonFrameSectionRow(this.editorKit, this, ontology, filler, InferredTaxonConstraints.alwaysAxiom(term, filler), false))
     rows.foreach(addRow)
   }
@@ -45,7 +43,6 @@ class AlwaysInTaxonFrameSection(editorKit: OWLEditorKit, frame: OWLFrame[OWLClas
       val mostSpecificFillers = InferredTaxonConstraints.findAlwaysFillers(term, InferredTaxonConstraints.Root, getReasoner)
         .filterNot(asserted)
         .map(filler => new AlwaysInTaxonFrameSectionRow(this.editorKit, this, this.getOWLModelManager.getActiveOntology, filler, InferredTaxonConstraints.alwaysAxiom(term, filler), true))
-      println(s"Adding ${mostSpecificFillers.size} inferred always rows")
       mostSpecificFillers.foreach(addRow)
     }
     )

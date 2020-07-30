@@ -32,8 +32,6 @@ class NeverInTaxonFrameSection(editorKit: OWLEditorKit, frame: OWLFrame[OWLClass
 
   override def refill(ontology: OWLOntology): Unit = {
     val term = getRootObject
-    println(s"Refill never for $term")
-    println(s"Asserted never: ${assertedNeverInTaxa(term, Set(ontology))}")
     val rows = assertedNeverInTaxa(term, Set(ontology)).map(filler => new NeverInTaxonFrameSectionRow(this.editorKit, this, ontology, filler, InferredTaxonConstraints.neverAxiom(term, filler), false))
     rows.foreach(addRow)
   }
@@ -41,12 +39,10 @@ class NeverInTaxonFrameSection(editorKit: OWLEditorKit, frame: OWLFrame[OWLClass
   override def refillInferred(): Unit = {
     val term: OWLClass = getRootObject
     val asserted = assertedNeverInTaxa(term, getReasoner.getRootOntology.getImportsClosure.asScala.to(Set))
-    println(s"Asserted never: $asserted")
     getOWLModelManager.getReasonerPreferences.executeTask(OptionalInferenceTask.SHOW_INFERRED_SUPER_CLASSES, () => {
       val mostSpecificFillers = InferredTaxonConstraints.findNeverFillers(term, InferredTaxonConstraints.Root, getReasoner)
         .filterNot(asserted)
         .map(filler => new NeverInTaxonFrameSectionRow(this.editorKit, this, this.getOWLModelManager.getActiveOntology, filler, InferredTaxonConstraints.neverAxiom(term, filler), true))
-      println(s"Adding ${mostSpecificFillers.size} inferred never rows")
       mostSpecificFillers.foreach(addRow)
     }
     )
