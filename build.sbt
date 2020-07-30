@@ -7,12 +7,15 @@ organization := "org.geneontology"
 
 name := "taxon-constraints"
 
-version := "0.1"
+version := "1.0"
 
 licenses := Seq("BSD-3-Clause" -> url("https://opensource.org/licenses/BSD-3-Clause"))
 
 // build with Java 8 for compatibility with Protégé
 scalaVersion := "2.13.3"
+
+// disable using the Scala version in output paths and artifacts
+crossPaths := false
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
