@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <extension id="org.geneontology.taxonconstraints" point="org.protege.editor.core.application.ViewComponent">
+        <name value="Taxon constraints"/>
+        <label value="Taxon constraints"/>
+        <class value="org.geneontology.taxonconstraints.TaxonConstraintsViewComponent"/>
+        <headerColor value="@org.protege.classcolor"/>
+        <category value="OBO"/>
+    </extension>
+</plugin>
