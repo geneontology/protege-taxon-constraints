@@ -1,6 +1,6 @@
 # OBO taxon constraints plugin for Protégé
 
-OBO ontologies such as Gene Ontology, Uberon anatomy ontology, and the Cell Ontology include axioms specifying the organism taxon in which instances of particular concepts are found. The OBO Relation Ontology provides axioms that propagate these taxon constraints over other relations between concepts such as 'part of' and 'develops from'. These taxon constraint axioms provide a powerful means to ensure consistent and taxon-appropriate application of ontology terms, but it can be hard to know which taxon constraints apply to a term, when the chain of reasoning can extend across many concepts. This plugin use the active reasoner within Protégé to compute the taxon constraints in effect for any selected term.
+OBO ontologies such as Gene Ontology, Uberon anatomy ontology, and the Cell Ontology include axioms specifying the organism taxon in which instances of particular concepts are found. The OBO Relation Ontology provides axioms that propagate these taxon constraints over other relations between concepts such as 'part of' and 'develops from'. These taxon constraint axioms provide a powerful means to ensure consistent and taxon-appropriate application of ontology terms, but it can be hard to know which taxon constraints apply to a term, when the chain of reasoning can extend across many concepts. This plugin uses the active reasoner within Protégé to compute the taxon constraints in effect for any selected term.
 
 ## Installation
 
