@@ -10,6 +10,8 @@ OBO ontologies such as Gene Ontology, Uberon anatomy ontology, and the Cell Onto
 
 Once you have the plugin installed, you can add it to your Protégé window by going to the menu `Window > Views > OBO views > Taxon constraints`, and the clicking the location to place the panel. The plugin will show the taxon constraints in effect for the selected OWL class. When a reasoner is running, any inferred taxon constraints will be shown along with directly asserted ones.
 
+![Taxon constraints plugin screenshot](https://github.com/geneontology/protege-taxon-constraints/raw/master/docs/imaginal_disc.png)
+
 ## Building
 
 To ensure compatibility with Protégé, you should be using Java 8. Building the plugin requires having `sbt` installed on your system. Inside the project folder, run `sbt osgiBundle` to build the plugin jar, which will be created in `./target/taxon-constraints-<version>.jar`.
