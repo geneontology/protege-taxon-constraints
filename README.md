@@ -4,7 +4,15 @@ OBO ontologies such as Gene Ontology, Uberon anatomy ontology, and the Cell Onto
 
 ## Installation
 
+### Automatically in Protégé
+
 *Forthcoming*
+
+### Manually
+
+Download a release jar file: https://github.com/geneontology/protege-taxon-constraints/releases
+
+Copy the jar file into the Protégé application `plugins` folder. On a Mac, this is inside the application bundle at `Protégé.app/Contents/Java/plugins/`.
 
 ## Usage
 
