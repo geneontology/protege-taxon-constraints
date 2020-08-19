@@ -9,7 +9,7 @@ This plugin uses the active reasoner within Protégé to compute the taxon const
 
 ### Automatically in Protégé
 
-*Forthcoming*
+Go to the menu `File > Check for plugins...` You should see 'OBO taxon constraints' in the plugin list. Check its box and press `Install`.
 
 ### Manually
 
